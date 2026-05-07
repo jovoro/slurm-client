@@ -25,6 +25,7 @@ const (
 type ClientInterface interface {
 	api.ClientWithResponsesInterface
 	ControllerPingInfoInterface
+	DiagInterface
 	JobInfoInterface
 	NodeInterface
 	NodeResourceLayoutInterface
