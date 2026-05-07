@@ -25,10 +25,12 @@ const (
 type ClientInterface interface {
 	api.ClientWithResponsesInterface
 	ControllerPingInfoInterface
+	DiagInterface
 	JobInfoInterface
 	NodeInterface
 	PartitionInterface
 	ReconfigureInterface
+	ReservationInterface
 	StatsInterface
 }
 
