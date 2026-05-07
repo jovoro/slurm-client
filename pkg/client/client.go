@@ -178,6 +178,13 @@ func (c *client) Create(
 
 	/////////////////////////////////////////////////////////////////////////////////
 
+	case *types.V0043ReservationInfo:
+		var reservationName string
+		reservationName, err = c.v0043Client.CreateReservationInfo(ctx, req)
+		key = object.ObjectKey(reservationName)
+
+	/////////////////////////////////////////////////////////////////////////////////
+
 	case *types.V0044JobInfo:
 		var jobId *int32
 		jobId, err = c.v0044Client.CreateJobInfo(ctx, req)
@@ -239,6 +246,8 @@ func (c *client) Delete(
 		err = c.v0043Client.DeleteJobInfo(ctx, key)
 	case *types.V0043Node:
 		err = c.v0043Client.DeleteNode(ctx, key)
+	case *types.V0043ReservationInfo:
+		err = c.v0043Client.DeleteReservationInfo(ctx, key)
 
 	/////////////////////////////////////////////////////////////////////////////////
 
@@ -306,6 +315,8 @@ func (c *client) Update(
 		err = c.v0043Client.UpdateJobInfo(ctx, key, req)
 	case *types.V0043Node:
 		err = c.v0043Client.UpdateNode(ctx, key, req)
+	case *types.V0043ReservationInfo:
+		err = c.v0043Client.UpdateReservationInfo(ctx, key, req)
 
 	/////////////////////////////////////////////////////////////////////////////////
 
@@ -358,6 +369,12 @@ func (c *client) Get(
 			return err
 		}
 		*o = *out
+	case *types.V0041Diag:
+		out, err := c.v0041Client.GetDiag(ctx)
+		if err != nil {
+			return err
+		}
+		*o = *out
 	case *types.V0041JobInfo:
 		out, err := c.v0041Client.GetJobInfo(ctx, string(key))
 		if err != nil {
@@ -382,6 +399,12 @@ func (c *client) Get(
 			return err
 		}
 		*o = *out
+	case *types.V0041ReservationInfo:
+		out, err := c.v0041Client.GetReservationInfo(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
 	case *types.V0041Stats:
 		out, err := c.v0041Client.GetStats(ctx)
 		if err != nil {
@@ -393,6 +416,12 @@ func (c *client) Get(
 
 	case *types.V0042ControllerPing:
 		out, err := c.v0042Client.GetControllerPing(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
+	case *types.V0042Diag:
+		out, err := c.v0042Client.GetDiag(ctx)
 		if err != nil {
 			return err
 		}
@@ -421,6 +450,12 @@ func (c *client) Get(
 			return err
 		}
 		*o = *out
+	case *types.V0042ReservationInfo:
+		out, err := c.v0042Client.GetReservationInfo(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
 	case *types.V0042Stats:
 		out, err := c.v0042Client.GetStats(ctx)
 		if err != nil {
@@ -432,6 +467,12 @@ func (c *client) Get(
 
 	case *types.V0043ControllerPing:
 		out, err := c.v0043Client.GetControllerPing(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
+	case *types.V0043Diag:
+		out, err := c.v0043Client.GetDiag(ctx)
 		if err != nil {
 			return err
 		}
@@ -460,6 +501,12 @@ func (c *client) Get(
 			return err
 		}
 		*o = *out
+	case *types.V0043ReservationInfo:
+		out, err := c.v0043Client.GetReservationInfo(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
 	case *types.V0043Stats:
 		out, err := c.v0043Client.GetStats(ctx)
 		if err != nil {
@@ -471,6 +518,12 @@ func (c *client) Get(
 
 	case *types.V0044ControllerPing:
 		out, err := c.v0044Client.GetControllerPing(ctx, string(key))
+		if err != nil {
+			return err
+		}
+		*o = *out
+	case *types.V0044Diag:
+		out, err := c.v0044Client.GetDiag(ctx)
 		if err != nil {
 			return err
 		}
@@ -556,6 +609,12 @@ func (c *client) List(
 			return err
 		}
 		*objList = *out
+	case *types.V0041DiagList:
+		out, err := c.v0041Client.ListDiag(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
 	case *types.V0041JobInfoList:
 		out, err := c.v0041Client.ListJobInfo(ctx)
 		if err != nil {
@@ -580,6 +639,12 @@ func (c *client) List(
 			return err
 		}
 		*objList = *out
+	case *types.V0041ReservationInfoList:
+		out, err := c.v0041Client.ListReservationInfo(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
 	case *types.V0041StatsList:
 		out, err := c.v0041Client.ListStats(ctx)
 		if err != nil {
@@ -591,6 +656,12 @@ func (c *client) List(
 
 	case *types.V0042ControllerPingList:
 		out, err := c.v0042Client.ListControllerPing(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
+	case *types.V0042DiagList:
+		out, err := c.v0042Client.ListDiag(ctx)
 		if err != nil {
 			return err
 		}
@@ -619,6 +690,12 @@ func (c *client) List(
 			return err
 		}
 		*objList = *out
+	case *types.V0042ReservationInfoList:
+		out, err := c.v0042Client.ListReservationInfo(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
 	case *types.V0042StatsList:
 		out, err := c.v0042Client.ListStats(ctx)
 		if err != nil {
@@ -630,6 +707,12 @@ func (c *client) List(
 
 	case *types.V0043ControllerPingList:
 		out, err := c.v0043Client.ListControllerPing(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
+	case *types.V0043DiagList:
+		out, err := c.v0043Client.ListDiag(ctx)
 		if err != nil {
 			return err
 		}
@@ -658,6 +741,12 @@ func (c *client) List(
 			return err
 		}
 		*objList = *out
+	case *types.V0043ReservationInfoList:
+		out, err := c.v0043Client.ListReservationInfo(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
 	case *types.V0043StatsList:
 		out, err := c.v0043Client.ListStats(ctx)
 		if err != nil {
@@ -669,6 +758,12 @@ func (c *client) List(
 
 	case *types.V0044ControllerPingList:
 		out, err := c.v0044Client.ListControllerPing(ctx)
+		if err != nil {
+			return err
+		}
+		*objList = *out
+	case *types.V0044DiagList:
+		out, err := c.v0044Client.ListDiag(ctx)
 		if err != nil {
 			return err
 		}

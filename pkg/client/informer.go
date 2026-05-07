@@ -151,6 +151,8 @@ func (i *informerCache) doListInformer() {
 
 	case types.ObjectTypeV0041ControllerPing:
 		list = &types.V0041ControllerPingList{}
+	case types.ObjectTypeV0041Diag:
+		list = &types.V0041DiagList{}
 	case types.ObjectTypeV0041JobInfo:
 		list = &types.V0041JobInfoList{}
 	case types.ObjectTypeV0041Node:
@@ -159,6 +161,8 @@ func (i *informerCache) doListInformer() {
 		list = &types.V0041PartitionInfoList{}
 	case types.ObjectTypeV0041Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0041ReservationInfo:
+		list = &types.V0041ReservationInfoList{}
 	case types.ObjectTypeV0041Stats:
 		list = &types.V0041StatsList{}
 
@@ -166,6 +170,8 @@ func (i *informerCache) doListInformer() {
 
 	case types.ObjectTypeV0042ControllerPing:
 		list = &types.V0042ControllerPingList{}
+	case types.ObjectTypeV0042Diag:
+		list = &types.V0042DiagList{}
 	case types.ObjectTypeV0042JobInfo:
 		list = &types.V0042JobInfoList{}
 	case types.ObjectTypeV0042Node:
@@ -174,6 +180,8 @@ func (i *informerCache) doListInformer() {
 		list = &types.V0042PartitionInfoList{}
 	case types.ObjectTypeV0042Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0042ReservationInfo:
+		list = &types.V0042ReservationInfoList{}
 	case types.ObjectTypeV0042Stats:
 		list = &types.V0042StatsList{}
 
@@ -181,6 +189,8 @@ func (i *informerCache) doListInformer() {
 
 	case types.ObjectTypeV0043ControllerPing:
 		list = &types.V0043ControllerPingList{}
+	case types.ObjectTypeV0043Diag:
+		list = &types.V0043DiagList{}
 	case types.ObjectTypeV0043JobInfo:
 		list = &types.V0043JobInfoList{}
 	case types.ObjectTypeV0043Node:
@@ -189,6 +199,8 @@ func (i *informerCache) doListInformer() {
 		list = &types.V0043PartitionInfoList{}
 	case types.ObjectTypeV0043Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0043ReservationInfo:
+		list = &types.V0043ReservationInfoList{}
 	case types.ObjectTypeV0043Stats:
 		list = &types.V0043StatsList{}
 
@@ -196,6 +208,8 @@ func (i *informerCache) doListInformer() {
 
 	case types.ObjectTypeV0044ControllerPing:
 		list = &types.V0044ControllerPingList{}
+	case types.ObjectTypeV0044Diag:
+		list = &types.V0044DiagList{}
 	case types.ObjectTypeV0044JobInfo:
 		list = &types.V0044JobInfoList{}
 	case types.ObjectTypeV0044Node:
@@ -280,6 +294,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 
 	case types.ObjectTypeV0041ControllerPing:
 		obj = &types.V0041ControllerPing{}
+	case types.ObjectTypeV0041Diag:
+		obj = &types.V0041Diag{}
 	case types.ObjectTypeV0041JobInfo:
 		obj = &types.V0041JobInfo{}
 	case types.ObjectTypeV0041Node:
@@ -288,6 +304,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 		obj = &types.V0041PartitionInfo{}
 	case types.ObjectTypeV0041Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0041ReservationInfo:
+		obj = &types.V0041ReservationInfo{}
 	case types.ObjectTypeV0041Stats:
 		obj = &types.V0041Stats{}
 
@@ -295,6 +313,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 
 	case types.ObjectTypeV0042ControllerPing:
 		obj = &types.V0042ControllerPing{}
+	case types.ObjectTypeV0042Diag:
+		obj = &types.V0042Diag{}
 	case types.ObjectTypeV0042JobInfo:
 		obj = &types.V0042JobInfo{}
 	case types.ObjectTypeV0042Node:
@@ -303,6 +323,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 		obj = &types.V0042PartitionInfo{}
 	case types.ObjectTypeV0042Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0042ReservationInfo:
+		obj = &types.V0042ReservationInfo{}
 	case types.ObjectTypeV0042Stats:
 		obj = &types.V0042Stats{}
 
@@ -310,6 +332,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 
 	case types.ObjectTypeV0043ControllerPing:
 		obj = &types.V0043ControllerPing{}
+	case types.ObjectTypeV0043Diag:
+		obj = &types.V0043Diag{}
 	case types.ObjectTypeV0043JobInfo:
 		obj = &types.V0043JobInfo{}
 	case types.ObjectTypeV0043Node:
@@ -318,6 +342,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 		obj = &types.V0043PartitionInfo{}
 	case types.ObjectTypeV0043Reconfigure:
 		panic("Reconfigure is not supported, this scenario should have been avoided.")
+	case types.ObjectTypeV0043ReservationInfo:
+		obj = &types.V0043ReservationInfo{}
 	case types.ObjectTypeV0043Stats:
 		obj = &types.V0043Stats{}
 
@@ -325,6 +351,8 @@ func (i *informerCache) doGetInformer(key object.ObjectKey) {
 
 	case types.ObjectTypeV0044ControllerPing:
 		obj = &types.V0044ControllerPing{}
+	case types.ObjectTypeV0044Diag:
+		obj = &types.V0044Diag{}
 	case types.ObjectTypeV0044JobInfo:
 		obj = &types.V0044JobInfo{}
 	case types.ObjectTypeV0044Node:
